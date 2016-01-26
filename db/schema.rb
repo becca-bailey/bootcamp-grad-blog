@@ -36,9 +36,9 @@ ActiveRecord::Schema.define(version: 20160125224441) do
     t.string   "title"
     t.text     "content"
     t.integer  "user_id"
-    t.boolean  "is_published"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.boolean  "is_published", default: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
   end
 
   create_table "taggings", force: :cascade do |t|
@@ -53,14 +53,9 @@ ActiveRecord::Schema.define(version: 20160125224441) do
 
   create_table "tags", force: :cascade do |t|
     t.string   "name"
-    t.integer  "post_id"
-    t.integer  "tag_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
-  add_index "tags", ["post_id"], name: "index_tags_on_post_id", using: :btree
-  add_index "tags", ["tag_id"], name: "index_tags_on_tag_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -84,6 +79,4 @@ ActiveRecord::Schema.define(version: 20160125224441) do
   add_foreign_key "categorized_postings", "posts"
   add_foreign_key "taggings", "posts"
   add_foreign_key "taggings", "tags"
-  add_foreign_key "tags", "posts"
-  add_foreign_key "tags", "tags"
 end
