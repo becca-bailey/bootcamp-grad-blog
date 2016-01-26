@@ -1,5 +1,6 @@
 class Post < ActiveRecord::Base
-  belongs_to :author, class_name: :user, foreign_key: :author_id
+  # fix this association
+  belongs_to :author, class_name: "user", foreign_key: :user_id
   # scope :ordered, :order => "created_at DESC"
 
   def self.published
