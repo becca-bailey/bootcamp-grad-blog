@@ -1,0 +1,44 @@
+
+!!! HTML
+%html
+  %head
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = stylesheet_link_tag    "https://fonts.googleapis.com/icon?family=Material+Icons"
+    = stylesheet_link_tag    'https://fonts.googleapis.com/css?family=Fredoka+One' 
+
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+    %nav
+      .nav-wrapper
+        =link_to "Becca and Farman's Blog", root_path
+        =link_to "#", :data => { :"data-activates" => "mobile-demo" }, class: "button-collapse" do
+          %i.material-icons menu
+        end
+        %ul.right.hide-on-med-and-down
+          %li
+            =link_to "About"
+          %li
+            =link_to "Contributors"
+          %li
+            =link_to "Categories"
+          %li
+            =link_to "Login"
+          %li
+            =link_to "Register"
+        %ul.side-nav#mobile-demo
+          %li
+            =link_to "About"
+          %li
+            =link_to "Contributors"
+          %li
+            =link_to "Categories"
+          %li
+            =link_to "Login"
+          %li
+            =link_to "Register"
+    %p.notice
+      = notice
+    %p.alert
+      = alert
+    =yield
