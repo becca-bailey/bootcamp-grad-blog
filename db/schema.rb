@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 20160202194401) do
   create_table "posts", force: :cascade do |t|
     t.string   "title"
     t.text     "content"
-    t.integer  "user_id"
+    t.integer  "author_id"
     t.integer  "category_id"
     t.boolean  "is_published",       default: false
     t.boolean  "is_featured",        default: true
@@ -45,6 +45,10 @@ ActiveRecord::Schema.define(version: 20160202194401) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.boolean  "is_published", default: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+
   end
 
   create_table "taggings", force: :cascade do |t|

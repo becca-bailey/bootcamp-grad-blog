@@ -3,7 +3,7 @@ class CreatePosts < ActiveRecord::Migration
     create_table :posts do |t|
       t.string :title
       t.text :content
-      t.references :user
+      t.references :author
       t.references :category
       t.boolean :is_published, default: false
       t.boolean :is_featured, default: false

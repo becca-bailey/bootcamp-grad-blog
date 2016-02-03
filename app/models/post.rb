@@ -1,6 +1,6 @@
 class Post < ActiveRecord::Base
   # fix this association
-  belongs_to :author, class_name: "user", foreign_key: :user_id
+  belongs_to :author, class_name: "User", foreign_key: "author_id"
   belongs_to :category
 
   has_attached_file :image, styles: { large: "800x600", medium: "400x300>", thumb: "100x100>" }
