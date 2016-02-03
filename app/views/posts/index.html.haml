@@ -1,0 +1,6 @@
+.container
+  - @posts.each do |post|
+    %strong
+      = link_to post.title, post
+      %br
+    = post.content
