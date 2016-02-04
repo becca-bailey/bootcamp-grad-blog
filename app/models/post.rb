@@ -2,6 +2,7 @@ class Post < ActiveRecord::Base
   # fix this association
   belongs_to :author, class_name: "User", foreign_key: "author_id"
   belongs_to :category
+  has_many :taggings
 
   has_attached_file :image, styles: { large: "800x600", medium: "400x300>", thumb: "100x100>" }
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
