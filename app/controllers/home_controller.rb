@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   def index
-    @featured 
+    @featured
   end
 end
