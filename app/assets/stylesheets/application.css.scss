@@ -16,3 +16,19 @@
  @import "materialize/components/color";
  $primary-color: color("blue", "lighten-2") !default;
  @import "materialize";
+
+ #site-title {
+   font-family: "Fredoka One";
+   font-size: 4em;
+   padding-left: 1vw;
+ }
+
+ .featured-post {
+   max-height: 400px;
+   overflow: hidden;
+ }
+
+ .featured-page {
+   max-height: 200px;
+   overflow: hidden;
+ }
