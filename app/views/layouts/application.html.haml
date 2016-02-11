@@ -11,7 +11,8 @@
   %body
     %nav
       .nav-wrapper
-        =link_to "DevReboot", root_path
+
+        =link_to "DevReboot", root_path, id: "site-title"
         =link_to "#", :data => { :"data-activates" => "mobile-demo" }, class: "button-collapse" do
           %i.material-icons menu
         end

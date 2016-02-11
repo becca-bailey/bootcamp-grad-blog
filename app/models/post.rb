@@ -1,5 +1,6 @@
 class Post < ActiveRecord::Base
   # fix this association
+  belongs_to :category
   belongs_to :author, class_name: "User", foreign_key: "author_id"
   belongs_to :category
   has_many :taggings

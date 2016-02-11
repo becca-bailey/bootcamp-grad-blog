@@ -11,7 +11,7 @@
 end
 
 20.times do
-  user = User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, password: "password", avatar: Faker::Avatar.image)
+  user = User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, password: "password")
   3.times do
     post = user.posts.create(title: Faker::Company.buzzword, content: Faker::Hipster.paragraph(2, true), image: Faker::Placeholdit.image)
     post.category = Category.find(rand(1..Category.all.length))

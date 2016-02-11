@@ -1,4 +1,8 @@
-%h1
-  = @post.title
-  = @post.author.email
-  = @post.content 
+.container
+  %h1
+    = @post.title
+  %p
+    %strong
+      = @post.author.email
+  %p
+    = @post.content
