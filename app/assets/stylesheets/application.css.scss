@@ -17,6 +17,10 @@
  $primary-color: color("blue", "lighten-2") !default;
  @import "materialize";
 
+ nav {
+   z-index: 999;
+ }
+
  #site-title {
    font-family: "Fredoka One";
    font-size: 4em;
@@ -32,3 +36,19 @@
    max-height: 200px;
    overflow: hidden;
  }
+
+ .post-image {
+   margin-left: auto;
+   margin-right: auto;
+   height: 500px;
+   overflow: hidden;
+ }
+
+ .post-image-small img {
+   max-width: 100%;
+ }
+
+footer {
+  text-align: center;
+  padding: 1em 0;
+}

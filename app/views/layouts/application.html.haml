@@ -17,29 +17,48 @@
           %i.material-icons menu
         end
         %ul.right.hide-on-med-and-down
+          - if user_signed_in?
+            %li
+              = link_to "New Post", new_post_path
+            %li
+              = link_to "Dashboard"
+          -else
+            %li
+              =link_to "Login", new_user_session_path
+            %li
+              =link_to "Register", new_user_registration_path
           %li
             =link_to "About"
           %li
             =link_to "Contributors"
           %li
-            =link_to "Categories"
-          %li
-            =link_to "Login"
-          %li
-            =link_to "Register"
+            =link_to "Categories", categories_path
         %ul.side-nav#mobile-demo
+          - if user_signed_in?
+            %li
+              = link_to "New Post", new_post_path
+            %li
+              = link_to "Dashboard"
+          -else
+            %li
+              =link_to "Login", new_user_session_path
+            %li
+              =link_to "Register", new_user_registration_path
           %li
             =link_to "About"
           %li
             =link_to "Contributors"
           %li
-            =link_to "Categories"
-          %li
-            =link_to "Login"
-          %li
-            =link_to "Register"
-    %p.notice
-      = notice
-    %p.alert
-      = alert
+            =link_to "Categories", categories_path
+    .container
+      %p.notice
+        = notice
+      %p.alert
+        = alert
     =yield
+    .container
+      %footer Copyright &copy; 2016 Becca and Farman, All Rights Reserved
+  -#
+  -# #login.modal
+  -#   .modal-content
+  -#     = render "devise/sessions/form"
