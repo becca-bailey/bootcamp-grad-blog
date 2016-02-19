@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   devise_for :users
   root "home#index"
 
+  get 'dashboard' => 'home#dashboard', as: 'dashboard'
+
   resources :posts
   resources :categories, only: [:index, :show]
   resources :tags, only: [:index, :show]
