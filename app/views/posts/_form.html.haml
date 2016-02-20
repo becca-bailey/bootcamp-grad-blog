@@ -1,0 +1,12 @@
+= form_for @post do |f|
+  .input-field
+    = f.text_field :title, placeholder: "Title"
+  .input-field
+    = f.text_area :content, class: "materialize-textarea", placeholder: "Post Content"
+  .input-field
+    = f.text_field :all_tags, placeholder: "Tags separated with comma"
+  .input-field
+    = f.file_field :image
+  .input-field
+    = raw tag_links(@post.all_tags)
+  = f.submit
