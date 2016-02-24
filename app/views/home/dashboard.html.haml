@@ -7,6 +7,6 @@
     %p
       %strong
         Status:
-      = @post.status
-    = link_to "Edit", edit_post_path(@post)
+      = post.status
+    = link_to "Edit", edit_post_path(post)
     = link_to "Delete"

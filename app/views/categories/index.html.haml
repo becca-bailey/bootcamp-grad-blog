@@ -1,0 +1,5 @@
+.container
+  - @categories.each do |category|
+    .index-wrapper
+      %strong.post-title
+        = link_to category.name, category
