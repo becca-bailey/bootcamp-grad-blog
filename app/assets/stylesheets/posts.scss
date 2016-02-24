@@ -24,11 +24,11 @@
   background: $gray;
     .post-title {
       font-size: 1.5em;
-        a:hover {
-          color: $pink;
-        }
     }
     .post-date {
       font-size: .75em;
+    }
+    a:hover {
+      color: $pink;
     }
 }

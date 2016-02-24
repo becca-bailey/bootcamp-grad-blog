@@ -16,6 +16,7 @@
  @import "materialize/components/color";
  $primary-color: color("blue", "lighten-2") !default;
  @import "materialize";
+ @import "_variables";
 
  nav {
    z-index: 999;
@@ -40,4 +41,12 @@
 footer {
   text-align: center;
   padding: 1em 0;
+}
+
+input[type="submit"] {
+  border: none;
+  background: $green;
+  color: white;
+  box-shadow: 1px 1px 0px $dark-green;
+  padding: 1em;
 }
