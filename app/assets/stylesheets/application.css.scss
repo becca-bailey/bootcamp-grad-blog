@@ -47,6 +47,10 @@ input[type="submit"] {
   border: none;
   background: $green;
   color: white;
-  box-shadow: 1px 1px 0px $dark-green;
+  box-shadow: 3px 3px 0px $dark-green;
   padding: 1em;
+  border-radius: .5em;
+  &:hover {
+    box-shadow: 0px 0px 15px $primary-color;
+  }
 }
