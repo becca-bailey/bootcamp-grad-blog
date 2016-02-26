@@ -28,6 +28,7 @@ group :development, :test do
   gem 'byebug'
   gem 'traceroute', '~> 0.5.0'
   gem 'faker'
+  gem 'dotenv-rails'
 
 end
 
