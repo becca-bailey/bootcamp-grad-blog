@@ -62,8 +62,8 @@ ActiveRecord::Schema.define(version: 20160219184051) do
     t.datetime "updated_at",  null: false
   end
 
-  add_index "categorized_postings", ["category_id"], name: "index_categorized_postings_on_category_id", using: :btree
-  add_index "categorized_postings", ["post_id"], name: "index_categorized_postings_on_post_id", using: :btree
+  add_index "categorized_postings", ["category_id"], name: "index_categorized_postings_on_category_id"
+  add_index "categorized_postings", ["post_id"], name: "index_categorized_postings_on_post_id"
 
   create_table "posts", force: :cascade do |t|
     t.string   "title"
@@ -87,8 +87,8 @@ ActiveRecord::Schema.define(version: 20160219184051) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "taggings", ["post_id"], name: "index_taggings_on_post_id", using: :btree
-  add_index "taggings", ["tag_id"], name: "index_taggings_on_tag_id", using: :btree
+  add_index "taggings", ["post_id"], name: "index_taggings_on_post_id"
+  add_index "taggings", ["tag_id"], name: "index_taggings_on_tag_id"
 
   create_table "tags", force: :cascade do |t|
     t.string   "name"
@@ -118,11 +118,7 @@ ActiveRecord::Schema.define(version: 20160219184051) do
     t.boolean  "admin",                  default: false
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
-  add_foreign_key "categorized_postings", "categories"
-  add_foreign_key "categorized_postings", "posts"
-  add_foreign_key "taggings", "posts"
-  add_foreign_key "taggings", "tags"
 end

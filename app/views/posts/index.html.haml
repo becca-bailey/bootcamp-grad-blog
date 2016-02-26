@@ -1,6 +1,12 @@
 .container
+  %h1.posts-header Posts
   - @posts.each do |post|
-    %strong
-      = link_to post.title, post
-      %br
-    = post.content
+    .index-wrapper
+      %strong.post-title
+        = link_to post.title, post
+      .post-date
+        Posted 
+        = time_ago_in_words(post.created_at) 
+        ago by 
+        = post.author.full_name
+      = post.content

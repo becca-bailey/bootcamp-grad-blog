@@ -1,7 +1,0 @@
-<%= form_for @post do |f| %>
-  <%= f.text_field :title %>
-  <%= f.text_area :content %>
-  <%= f.text_field :all_tags, placeholder: "Tags separated with comma" %>
-  <%=raw tag_links(@post.all_tags)%>
-  <%= f.submit %>
-<% end %>

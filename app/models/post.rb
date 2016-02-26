@@ -6,7 +6,7 @@ class Post < ActiveRecord::Base
   has_many :taggings
   has_many :tags, through: :taggings
 
-  has_attached_file :image, styles: { large: "800x600", medium: "400x300>", thumb: "100x100>" }
+  has_attached_file :image, styles: { x_large: "1200x800", small: "400x300>", thumb: "100x100>" }
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
   # scope :ordered, :order => "created_at DESC"
 
@@ -30,5 +30,13 @@ class Post < ActiveRecord::Base
 
   def self.tagged_with(name)
     Tag.find_by_name!(name).posts
+  end
+
+  def status
+    if self.is_published == true
+      return "Published"
+    else
+      return "Submitted on #{self.created_at.strftime("%B %d, %Y")}"
+    end
   end
 end

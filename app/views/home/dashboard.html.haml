@@ -1,0 +1,12 @@
+.container
+  = link_to "Account Settings", edit_user_registration_path
+  - @user_posts.each do |post|
+    %h1= post.title
+    %p
+      %strong= post.created_at.strftime("%B %d, %Y")
+    %p
+      %strong
+        Status:
+      = post.status
+    = link_to "Edit", edit_post_path(post)
+    = link_to "Delete"

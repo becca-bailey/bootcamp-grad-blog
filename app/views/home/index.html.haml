@@ -1,10 +1,26 @@
-.row
-  .col.s12.m6.featured-post
-    = image_tag(featured_post_image)
-  .col.s12.m6.featured-page
-    = image_tag(featured_post_image)
+-# .row
+-#   .col.s12.m6.featured-post
+-#     = image_tag(featured_post_image)
+-#   .col.s12.m6.featured-page
+-#     = image_tag(featured_post_image)
+-#     .row
+-#       .col.s6.m3.small-featured
+-#         = image_tag(featured_post_image)
+-#       .col.s6.m3.small-featured
+-#         = image_tag(featured_post_image)
+.container
+  - @published.each do |post|
     .row
-      .col.s6.m3.small-featured
-        = image_tag(featured_post_image)
-      .col.s6.m3.small-featured
-        = image_tag(featured_post_image)
+      .col.s12.m4.l3.post-image-small.valign-wrapper
+        = image_tag(post.image.url(:medium), class: "valign")
+      .col.s12.m8.l9.post
+        %h2
+          = link_to post.title, post
+        -# = post.created_at.strftime("%B %d, %Y")
+        %p
+          .strong
+            = time_ago_in_words(post.created_at)
+            ago
+        %p
+          = truncate(post.content, length: 200)
+          = link_to "Read More", post

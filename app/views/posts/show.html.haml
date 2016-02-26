@@ -1,8 +1,20 @@
+.post-image.center-align
+  = image_tag @post.image.url(:x_large)
 .container
-  %h1
+  %h1.posts-header
     = @post.title
   %p
     %strong
       = @post.author.email
+      %br
+      = @post.created_at.strftime("%B %d, %Y")
   %p
     = @post.content
+  - if @post.author == current_user
+    %p
+      %strong
+        Status:
+      = @post.status
+    = link_to "Edit", edit_post_path(@post)
+    = link_to "Delete"
+  = link_to "Back", posts_path
