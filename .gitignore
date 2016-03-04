@@ -12,8 +12,4 @@
 !/log/.keep
 /tmp
 /db/schema
-<<<<<<< HEAD
-.env
-=======
 /.env
->>>>>>> master

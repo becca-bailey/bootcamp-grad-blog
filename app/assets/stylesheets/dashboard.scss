@@ -1,0 +1,24 @@
+i.small {
+  margin-bottom: 0;
+}
+
+.dashboard-post {
+  background-color: (color("grey", "lighten-2"));
+  padding: 1em;
+  border-radius: 10px;
+  .check {
+    padding-right: 0;
+    text-align: center;
+    i {
+      margin-top: 10px;
+    }
+  }
+}
+
+.i-green {
+  color: #4caf50;
+}
+
+.i-yellow {
+  color: #ffeb3b;
+}
