@@ -1,12 +1,26 @@
 .container
-  = link_to "Account Settings", edit_user_registration_path
-  - @user_posts.each do |post|
-    %h1= post.title
-    %p
-      %strong= post.created_at.strftime("%B %d, %Y")
-    %p
-      %strong
-        Status:
-      = post.status
-    = link_to "Edit", edit_post_path(post)
-    = link_to "Delete"
+  .row
+    .col.s12.m3
+      %aside.sidebar
+        %i.material-icons.small settings
+        = link_to "Account Settings", edit_user_registration_path
+        %br
+        %i.material-icons.small mode_edit
+        = link_to "New Post", new_post_path
+    .col.s12.m9
+      - @user_posts.each do |post|
+        .dashboard-post.z-depth-1
+          .row
+            .col.s2.m1.check
+              - if post.is_published
+                %i.material-icons.small.i-green check_circle
+              - else
+                %i.material-icons.small.i-yellow check_circle
+            .col.s10.m11
+              %h5= post.title
+              %p
+              = post.status
+              &nbsp;|&nbsp;
+              = link_to "Edit", edit_post_path(post)
+              &nbsp;|&nbsp;
+              = link_to "Delete"
