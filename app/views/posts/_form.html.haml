@@ -6,7 +6,7 @@
   .input-field
     = f.text_field :all_tags, placeholder: "Tags separated with comma"
   .input-field
-    = f.file_field :image
+    = f.file_field :image, class: "file-path-wrapper"
   .input-field
     = raw tag_links(@post.all_tags)
   = f.submit

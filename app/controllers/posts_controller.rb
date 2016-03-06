@@ -1,8 +1,9 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
   before_action :get_post, only: [:show, :edit, :update, :destroy]
+
   def index
-    @posts = Post.all
+    @posts = Post.paginate(:page => params[:page], per_page: 6)
     @published = Post.where(is_published: true)
   end
 
@@ -34,6 +35,10 @@ class PostsController < ApplicationController
     else
       render "edit"
     end
+  end
+
+  def destroy
+
   end
 
   private
