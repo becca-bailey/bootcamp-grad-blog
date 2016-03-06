@@ -8,13 +8,20 @@
   @include image;
 }
 
+.post-content {
+  font-size: 1.5em;
+  border-top: 2px solid $gray;
+  border-bottom: 2px solid $gray;
+  padding: .5em 0 .5em 0;
+}
+
 .post-image-small img {
   max-width: 100%;
 }
 
 .posts-header {
   color: $green;
-  text-shadow: 2px 2px 5px $dark-gray;
+  // text-shadow: 2px 2px 5px $dark-gray;
 }
 
 .index-wrapper {
