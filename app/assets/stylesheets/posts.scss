@@ -32,3 +32,20 @@
       color: $pink;
     }
 }
+
+.pagination a { 
+  padding: 0;
+  border: none;
+  background: none;
+  box-shadow: none;
+  
+  & li.active {
+      color: #fff;
+      margin: 0;
+  }
+
+  &:hover {
+    color: $green;
+    // background: #fff;
+  }
+}

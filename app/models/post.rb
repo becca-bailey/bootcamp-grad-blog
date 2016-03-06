@@ -3,7 +3,7 @@ class Post < ActiveRecord::Base
   belongs_to :category
   belongs_to :author, class_name: "User", foreign_key: "author_id"
   belongs_to :category
-  has_many :taggings
+  has_many :taggings, dependent: :destroy
   has_many :tags, through: :taggings
 
   has_attached_file :image, styles: { x_large: "1200x800", small: "400x300>", thumb: "100x100>" }

@@ -8,6 +8,8 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'haml', '~> 4.0', '>= 4.0.7'
 gem 'postgres_ext'
 gem 'pg'
+gem 'will_paginate', '~> 3.0.6'
+gem 'will_paginate-materialize', '~> 0.1.0'
 # gem 'therubyracer', platforms: :ruby
 
 gem 'jquery-rails'
