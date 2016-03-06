@@ -2,11 +2,16 @@
   .input-field
     = f.text_field :title, placeholder: "Title"
   .input-field
-    = f.text_area :content, class: "materialize-textarea", placeholder: "Post Content"
+    = f.text_area :content, class: "materialize-textarea"
+    = f.label :content
   .input-field
     = f.text_field :all_tags, placeholder: "Tags separated with comma"
-  .input-field
-    = f.file_field :image, class: "file-path-wrapper"
+  .file-field.input-field
+    .btn
+      Choose File
+      = f.file_field :image
+    .file-path-wrapper
+      %input.file-path.validate
   .input-field
     = raw tag_links(@post.all_tags)
   = f.submit
