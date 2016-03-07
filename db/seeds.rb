@@ -15,6 +15,7 @@ end
   3.times do
     post = user.posts.create(title: Faker::Company.buzzword, content: Faker::Hipster.paragraph(2, true))
     post.category = Category.find(rand(1..Category.all.length))
+    post.tags << Tag.create(name: Faker::Hacker.noun)
   end
 end
 AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')

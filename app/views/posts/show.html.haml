@@ -3,13 +3,20 @@
 .container
   %h1.posts-header
     = @post.title
-  %p
+  %p.post-details
     %strong
-      = @post.author.email
+      Posted by: 
+      = @post.author.full_name
       %br
+      on 
       = @post.created_at.strftime("%B %d, %Y")
-  %p
+  %p.post-content
     = @post.content
+  %p
+    Tags:
+    - @post.tags.each do |tag|
+      .chip
+        = link_to "#{tag.name}", tag_path
   - if @post.author == current_user
     %p
       %strong
