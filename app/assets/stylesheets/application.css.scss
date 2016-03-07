@@ -16,9 +16,19 @@
  @import "materialize/components/color";
  @import "materialize";
  @import "_variables";
+ @import "posts";
+
+a {
+  color: $seton-blue;
+}
+
+body {
+  background: #F2E8C4;
+}
 
  nav {
    z-index: 999;
+   background: #3EC9A7;
  }
 
  #site-title {
@@ -42,16 +52,22 @@ footer {
   padding: 1em 0;
 }
 
-input[type="submit"] {
-  border: none;
-  background: $green;
-  color: white;
-  box-shadow: 3px 3px 0px $dark-green;
-  padding: 1em;
-  border-radius: .5em;
+// input[type="submit"] {
+//   border: none;
+//   background: $green;
+//   color: white;
+//   box-shadow: 3px 3px 0px $dark-green;
+//   padding: 1em;
+//   border-radius: .5em;
+//   &:hover {
+//     box-shadow: 0px 0px 15px $primary-color;
+//   }
+// }
+
+.btn {
+  background: $header-green;
   &:hover {
-    box-shadow: 0px 0px 15px $primary-color;
+    background: $header-green;
   }
 }
-
 
