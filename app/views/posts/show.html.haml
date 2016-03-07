@@ -16,7 +16,7 @@
     Tags:
     - @post.tags.each do |tag|
       .chip
-        = tag.name
+        = link_to "#{tag.name}", tag_path
   - if @post.author == current_user
     %p
       %strong
