@@ -8,6 +8,14 @@ class PostsController < ApplicationController
   end
 
   def search
+    title = params[:title]
+    student = Post.find_by(title)
+    if(post != nil)
+      redirect_to post
+    else
+      @error = "The post was not found"
+      render "posts/index"
+    end
   end
 
   def show
