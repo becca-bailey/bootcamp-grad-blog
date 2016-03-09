@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :admin_users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
+  devise_for :admin_users
   devise_for :users
+
   root "home#index"
 
   get 'dashboard' => 'home#dashboard', as: 'dashboard'
