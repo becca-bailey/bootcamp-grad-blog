@@ -1,9 +1,10 @@
 class TagsController < ApplicationController
   before_action :get_tag, only: [:show]
-  def index
+  def index 
   end
 
-  def show   
+  def show
+    @posts = Post.tagged_with(@tag.name)   
   end
 
   private

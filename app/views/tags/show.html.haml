@@ -2,4 +2,14 @@
   %h3
     Posts tagged as 
     = @tag.name
+  - @posts.each do |post|
+    .index-wrapper
+      %strong.post-title
+        = link_to post.title, post
+      .post-date
+        Posted 
+        = time_ago_in_words(post.created_at) 
+        ago by 
+        = post.author.full_name
+      = post.content_limited
    
