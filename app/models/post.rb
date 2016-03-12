@@ -18,6 +18,15 @@ class Post < ActiveRecord::Base
     Post.where(is_published: false)
   end
 
+  def content_limited
+    words = self.content.split
+    if words.length < 50
+      return self.content
+    else
+      words[0..50].join(' ') + "..."
+    end       
+  end
+
   def all_tags=(names)
     self.tags = names.split(",").map do |name|
         Tag.where(name: name.strip).first_or_create!

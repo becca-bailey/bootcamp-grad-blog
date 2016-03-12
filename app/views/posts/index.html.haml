@@ -9,5 +9,5 @@
         = time_ago_in_words(post.created_at) 
         ago by 
         = post.author.full_name
-      = post.content
+      = post.content_limited
   = will_paginate @posts, renderer: MaterializePagination::Rails
